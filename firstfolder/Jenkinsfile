@@ -7,7 +7,7 @@ stages {
   }
     steps {
     sh 'mvn --version'
-    }
+   }
    }
    stage('Front-end') {
     agent {
@@ -17,5 +17,13 @@ stages {
     sh 'node --version'
     }
     }
+   stage('DB') {
+    agent {
+      docker { image 'mysql:latest' }
+  }
+    steps {
+    sh 'SELECT * FROM XYZ'
     }
+    }
+   }
   }
