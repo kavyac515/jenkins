@@ -8,8 +8,8 @@ stages {
     steps {
     sh 'mvn --version'
     }
-    }
- stage('Front-end') {
+   }
+   stage('Front-end') {
     agent {
       docker { image 'node:16-alpine' }
   }
